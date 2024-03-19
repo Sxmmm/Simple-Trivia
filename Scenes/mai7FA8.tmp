@@ -1,0 +1,180 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4sngc38molmg"]
+
+[ext_resource type="Script" path="res://Scripts/PushButtonCounter.gd" id="1_sgi8k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b8xnp"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_p6psd"]
+font_size = 32
+
+[node name="main" type="Node2D"]
+
+[node name="Screens" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+
+[node name="GameScreen" type="Control" parent="Screens"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+script = ExtResource("1_sgi8k")
+
+[node name="Bounds" type="Control" parent="Screens/GameScreen"]
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+
+[node name="Button" type="Button" parent="Screens/GameScreen/Bounds"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="Button4" type="Button" parent="Screens/GameScreen/Bounds"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Button3" type="Button" parent="Screens/GameScreen/Bounds"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 50.0
+grow_vertical = 0
+
+[node name="Button2" type="Button" parent="Screens/GameScreen/Bounds"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+
+[node name="ButtonA" type="Button" parent="Screens/GameScreen"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 610.0
+offset_right = 535.0
+offset_bottom = 685.0
+
+[node name="Label" type="Label" parent="Screens/GameScreen/ButtonA"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -15.0
+offset_right = 92.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A"
+label_settings = SubResource("LabelSettings_b8xnp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonB" type="Button" parent="Screens/GameScreen"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 710.0
+offset_right = 535.0
+offset_bottom = 785.0
+
+[node name="Label" type="Label" parent="Screens/GameScreen/ButtonB"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -15.0
+offset_right = 92.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "B"
+label_settings = SubResource("LabelSettings_b8xnp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonC" type="Button" parent="Screens/GameScreen"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 810.0
+offset_right = 535.0
+offset_bottom = 885.0
+
+[node name="Label" type="Label" parent="Screens/GameScreen/ButtonC"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -15.0
+offset_right = 92.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "C"
+label_settings = SubResource("LabelSettings_b8xnp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonD" type="Button" parent="Screens/GameScreen"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 910.0
+offset_right = 535.0
+offset_bottom = 985.0
+
+[node name="Label" type="Label" parent="Screens/GameScreen/ButtonD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -15.0
+offset_right = 92.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "D"
+label_settings = SubResource("LabelSettings_b8xnp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PressCount" type="Label" parent="Screens/GameScreen"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 208.0
+offset_right = 719.0
+offset_bottom = 295.0
+text = "Press Count: 0"
+label_settings = SubResource("LabelSettings_p6psd")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Screens/GameScreen"]
+
+[connection signal="request_completed" from="Screens/GameScreen/HTTPRequest" to="Screens/GameScreen" method="_on_http_request_request_completed"]

@@ -1,0 +1,269 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4sngc38molmg"]
+
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_sgi8k"]
+[ext_resource type="Script" path="res://Scripts/QuestionUI.gd" id="2_n3440"]
+[ext_resource type="Script" path="res://Scripts/StartManager.gd" id="3_jhgkd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b8xnp"]
+line_spacing = -8.0
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_p6psd"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_pkxch"]
+font_size = 56
+
+[node name="main" type="Node2D"]
+
+[node name="Screens" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+
+[node name="GameScreen" type="Control" parent="Screens"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+script = ExtResource("1_sgi8k")
+
+[node name="Bounds" type="Control" parent="Screens/GameScreen"]
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+
+[node name="Button" type="Button" parent="Screens/GameScreen/Bounds"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+
+[node name="Button4" type="Button" parent="Screens/GameScreen/Bounds"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Button3" type="Button" parent="Screens/GameScreen/Bounds"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 50.0
+grow_vertical = 0
+
+[node name="Button2" type="Button" parent="Screens/GameScreen/Bounds"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+
+[node name="QuestionUI" type="Control" parent="Screens/GameScreen"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+script = ExtResource("2_n3440")
+
+[node name="ButtonA" type="Button" parent="Screens/GameScreen/QuestionUI"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 610.0
+offset_right = 685.0
+offset_bottom = 685.0
+
+[node name="Label" type="Label" parent="Screens/GameScreen/QuestionUI/ButtonA"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = -21.5
+offset_right = 318.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "A"
+label_settings = SubResource("LabelSettings_b8xnp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ButtonB" type="Button" parent="Screens/GameScreen/QuestionUI"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 710.0
+offset_right = 685.0
+offset_bottom = 785.0
+
+[node name="Label" type="Label" parent="Screens/GameScreen/QuestionUI/ButtonB"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = -21.5
+offset_right = 318.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "B"
+label_settings = SubResource("LabelSettings_b8xnp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ButtonC" type="Button" parent="Screens/GameScreen/QuestionUI"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 810.0
+offset_right = 685.0
+offset_bottom = 885.0
+
+[node name="Label" type="Label" parent="Screens/GameScreen/QuestionUI/ButtonC"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = -21.5
+offset_right = 318.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "C"
+label_settings = SubResource("LabelSettings_b8xnp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ButtonD" type="Button" parent="Screens/GameScreen/QuestionUI"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 910.0
+offset_right = 685.0
+offset_bottom = 985.0
+
+[node name="Label" type="Label" parent="Screens/GameScreen/QuestionUI/ButtonD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -318.0
+offset_top = -21.5
+offset_right = 318.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "D"
+label_settings = SubResource("LabelSettings_b8xnp")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="QuestionLabel" type="Label" parent="Screens/GameScreen/QuestionUI"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 208.0
+offset_right = 719.0
+offset_bottom = 295.0
+text = "Q:"
+label_settings = SubResource("LabelSettings_p6psd")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ScoreLabel" type="Label" parent="Screens/GameScreen/QuestionUI"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 37.0
+offset_right = 719.0
+offset_bottom = 124.0
+text = "0"
+label_settings = SubResource("LabelSettings_pkxch")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="HTTPRequest" type="HTTPRequest" parent="Screens/GameScreen"]
+
+[node name="StartScreen" type="Control" parent="Screens"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_jhgkd")
+
+[node name="Title" type="Label" parent="Screens/StartScreen"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 258.0
+offset_right = 719.0
+offset_bottom = 345.0
+text = "Trivia"
+label_settings = SubResource("LabelSettings_pkxch")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Main" type="Control" parent="Screens/StartScreen"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ButtonStart" type="Button" parent="Screens/StartScreen/Main"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 610.0
+offset_right = 535.0
+offset_bottom = 685.0
+
+[node name="Label" type="Label" parent="Screens/StartScreen/Main/ButtonStart"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -15.0
+offset_right = 92.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+label_settings = SubResource("LabelSettings_b8xnp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="Control" parent="Screens/StartScreen"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="button_down" from="Screens/GameScreen/QuestionUI/ButtonA" to="Screens/GameScreen/QuestionUI" method="_on_button_a_button_down"]
+[connection signal="button_down" from="Screens/GameScreen/QuestionUI/ButtonB" to="Screens/GameScreen/QuestionUI" method="_on_button_b_button_down"]
+[connection signal="button_down" from="Screens/GameScreen/QuestionUI/ButtonC" to="Screens/GameScreen/QuestionUI" method="_on_button_c_button_down"]
+[connection signal="button_down" from="Screens/GameScreen/QuestionUI/ButtonD" to="Screens/GameScreen/QuestionUI" method="_on_button_d_button_down"]
+[connection signal="request_completed" from="Screens/GameScreen/HTTPRequest" to="Screens/GameScreen" method="_on_http_request_request_completed"]
+[connection signal="button_down" from="Screens/StartScreen/Main/ButtonStart" to="Screens/StartScreen" method="_on_button_start_button_down"]
